@@ -1,0 +1,45 @@
+@use 'variaveis';
+
+.shows {
+    padding: 2vw 5.6vw;
+    min-height: 50vw;
+
+    &__list {
+        display: none;
+        grid-template-columns: 1fr 1fr 1fr; // 3 COLUNAS
+        gap: 24px; // MESMA COISA QUE "grid-gap:"
+        margin-top: 44px;
+
+        &--is-active {
+            display: grid;
+        }
+
+        &__item {
+            img {
+                max-width: 100%;
+                border-radius: 4px;
+                color: #fff; //! EXCLUIR DEPOIS
+            }
+        }
+    }
+
+    &__tabs {
+        display: flex;
+        justify-content: center;
+
+        &__button {
+            color: variaveis.$corTextoSecundario;
+            background: none;
+            font-size: 20px;
+            border: none;
+            padding-bottom: 5px;
+            margin: 0 1vw;
+            cursor: pointer;
+            border-bottom: 5px solid transparent;
+
+            &--is-active {
+                border-color: variaveis.$corTextoSecundario;
+            }
+        }
+    }
+}

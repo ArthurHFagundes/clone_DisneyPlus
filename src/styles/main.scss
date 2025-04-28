@@ -46,14 +46,26 @@ body { // NÃO SE APLICA A input E button
 
 .text--big {
     @include text(18px);  // PARA INCLUIR O MIXIN
+
+    @media (max-width: 768px) {
+        @include text(15px);
+    }
 }
 
 .text {
     @include text; // VAI FICAR OS 16px PADRAO
+
+    @media (max-width: 768px) {
+        @include text(14px);
+    }
 }
 
 .text--small {
-    @include text(12px); 
+    @include text(12px);
+
+    @media (max-width: 768px) {
+        @include text(11px);
+    }
 }
 
 .link-text { 
@@ -64,14 +76,26 @@ body { // NÃO SE APLICA A input E button
 
 .title--big {
     @include title(44px); 
+
+    @media (max-width: 768px) {
+        @include title(26px);
+    }
 }
 
 .title {
-    @include title; 
+    @include title;
+
+    @media (max-width: 768px) {
+        @include title(24px);
+    }
 }
 
 .title--small {
-    @include title(28px); 
+    @include title(28px);
+
+    @media (max-width: 768px) {
+        @include title(22px);
+    }
 }
 
 .button {
@@ -117,6 +141,10 @@ body { // NÃO SE APLICA A input E button
     grid-template-columns: 1fr 1fr;
     align-items: center;
 
+    @media (max-width: 768px) {
+        display: block;
+    }
+
     img {
         max-width: 100%; // PARA OCUPAR TODO O ESPAÇAMENTO DA COLUNA E SOMENTE ESSE ESPAÇAMENTO, NÃO A MAIS
     }
@@ -146,6 +174,12 @@ body { // NÃO SE APLICA A input E button
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            @media (max-width: 768px) { // PARA FICAR IMG ENCIMA E TEXTO EMBAIXO
+                position: relative;
+                left: 0;
+                width: 100%;
+            }
         }
     }
 }

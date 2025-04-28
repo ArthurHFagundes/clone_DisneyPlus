@@ -5,6 +5,10 @@
         display: flex;
         justify-content: space-around; // PARA TER UM ESPAÇAMENTO MÍNIMO ENTRE OS ELEMENTOS
         margin-top: 50px;
+
+        @media (max-width: 768px) {
+            display: block;
+        }
         
         &__item{
             text-align: center;
@@ -13,7 +17,7 @@
             width: 100%;
 
             button {
-                margin-top: 26px;
+                margin-top: 24px;
             }
             
             &:nth-child(2) { // PARASELECIONAR O SEGUNDO ITEM DA LISTA (2)
@@ -24,6 +28,10 @@
             
             img {
                 height: 83px;
+
+                @media (max-width:768px) {
+                    margin-left: -26px;
+                }
             }
             
             strong {

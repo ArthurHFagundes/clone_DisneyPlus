@@ -5,6 +5,10 @@
         display: grid;
         gap: 24px;
         grid-template-columns: repeat(4, 1fr); // DIVIDIDO EM 4 ITENS E EM 1 FRAME DE LARGURA CADA
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+        }
         
         &__item {
             text-align: center;

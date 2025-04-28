@@ -24,6 +24,10 @@
                 cursor: pointer;
                 position: relative;
 
+                @media (max-width:768px) {
+                    font-size: 21px;
+                }
+
                 &::after { // PSEUDOELEMENTO
                     content: '+';
                     position: absolute;

@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Clone Disney+ </title>
     <link rel="stylesheet" href="./dist/css/main.css">
 </head>
@@ -171,7 +171,10 @@
         </div>
     </section>
     <section class="img-text-section img-text-section--img-full-width">
-        <img src="./dist/images/fundo_rei_leao.png" alt="Imagem do Mufasa, o rei leão">
+        <picture>
+            <source media="(max-width: 768px)" srcset="./dist/images/fundo_rei_leao_celular.png"> <!-- PARA FAZER COM QUE APAREÇA ESSA IMAGEM NO CELULAR -->
+            <img src="./dist/images/fundo_rei_leao.png" alt="Imagem do Mufasa, o rei leão">
+        </picture>
         <div class="img-text-section--text-container img-text-section--img-full-width--text-container">
             <h2 class="title"> Baixe filmes e séries </h2>
             <p class="text--big">

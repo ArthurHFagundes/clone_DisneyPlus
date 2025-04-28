@@ -1,6 +1,13 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
-const imagemin = require('gulp-imagemin')
+const imagemin = require('gulp-imagemin');
+const uglify = require('gulp-uglify');
+
+function scripts() {
+    return gulp.src('./src/scripts/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('./dist/js'))
+}
 
 function styles() {
     return gulp.src('./src/styles/*.scss') // ARQUIVO FONTE
@@ -14,8 +21,9 @@ function images() {
         .pipe(gulp.dest('./dist/images')); // PASTA DE DESTINO
 }
 
-exports.default = gulp.parallel(styles, images); // PARA EXECUTAR AS FUNÇÕES PARALELAMENTE
+exports.default = gulp.parallel(styles, images, scripts); // PARA EXECUTAR AS FUNÇÕES PARALELAMENTE
 
 exports.watch = function() { // EXECUTAR A FUNÇÃO DE OBSERVADOR
     gulp.watch('./src/styles/*.scss', gulp.parallel(styles)) // 'ARQUIVO' PARA OBSERVAR E A (FUNÇÃO) PARA EXECUTAR
+    gulp.watch('./src/styles/*.js', gulp.parallel(scripts))
 }

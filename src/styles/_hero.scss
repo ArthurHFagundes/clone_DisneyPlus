@@ -7,6 +7,11 @@
     text-align: center;
     background-size: cover; // VAI TENTAR OCUPAR TODO O ESPAÇO (PRESERVANDO A IMAGEM)
 
+    .button {
+        margin-top: 2vw;
+        margin-bottom: 8px;
+    }
+
     &__content {
         max-width: 640px;
 
@@ -31,8 +36,13 @@
             display: flex;
             justify-content: space-between;
 
+            li {
+                list-style: none;
+            }
+            
             &__combo {
                 width: calc(50% - 12px); //50% E 12px DE ESPAÇAMENTO EM CADA
+
 
                 img {
                     max-height: 60px;

@@ -2,6 +2,12 @@
 @use 'hero';
 @use 'shows';
 @use 'plans';
+@use 'available-devices';
+@use 'faq';
+@use 'footer';
+@use 'header';
+
+@use "sass:color";
 
 @font-face { // PARA INSERIR UM ARQUIVO DE FONTE EXTERNA
     font-family: Avenir; // NOME
@@ -20,6 +26,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Avenir, sans-serif;
+    list-style: none;
 }
 
 body { // NÃO SE APLICA A input E button
@@ -68,15 +75,77 @@ body { // NÃO SE APLICA A input E button
 }
 
 .button {
-    display: block;
+    display: flex; // PARA ALINHAR O TEXTO AO CENTRO DO:
+    align-items: center; // EIXO Y
+    justify-content: center; // E EIXO X
     width: 100%;
     height: 60px;
     font-size: 18px;
     color: variaveis.$corTextoSecundario;
-    background-color: #6421ff;
+    background-color: variaveis.$corDeFundoBotaoPrimario;
     text-transform: uppercase;
     border-radius: 4px;
     border: none;
-    margin-top: 2vw;
-    margin-bottom: 8px;
+    text-decoration: none;
+    padding: 8px 14px;
+    letter-spacing: 1px; // ESPAÇAMENTO DE LETRA
+    border: 1px solid variaveis.$corDeFundoBotaoPrimario;
+
+    &:hover {
+        background-color: color.adjust(variaveis.$corDeFundoBotaoPrimario, $lightness: 3%)
+    }
+
+    &--secondary {
+        background-color: variaveis.$corDeFundoBotaoSecundario;
+        border-color: variaveis.$corDeFundoBotaoSecundario;
+    }
+
+    &--dark {
+        background-color: rgba(variaveis.$corDeFundoBotaoDark, 0.8);
+        border-color: variaveis.$corTextoSecundario;
+
+        &:hover {
+            background-color: variaveis.$corTextoSecundario;
+            color: variaveis.$corDeFundo;
+        }
+    }
+}
+
+.img-text-section {
+    padding: 5.6vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    img {
+        max-width: 100%; // PARA OCUPAR TODO O ESPAÇAMENTO DA COLUNA E SOMENTE ESSE ESPAÇAMENTO, NÃO A MAIS
+    }
+
+    &--text-container {
+        padding: 0 2vw;
+
+        h2 {
+            margin-bottom: 24px;
+        }
+    }
+
+    &--img-full-width { // SEÇÃO DO REI LEÃO
+        display: block;
+        position: relative; // PARA PRENDER O "position: absolute" DENTRO DELE
+
+        img {
+            width: 100%;
+        }
+
+        &--text-container {
+            position: absolute;
+            top: 0;
+            left: 50%; // PARA O ELEMENTO IR PARA A DIREITA
+            height: 100%;
+            width: calc(50% - 5.6vw); // 50% - padding: 5.6vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
 }
